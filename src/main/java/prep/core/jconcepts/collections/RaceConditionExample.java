@@ -11,10 +11,13 @@ package prep.core.jconcepts.collections;
 public class RaceConditionExample {
 
 	/**
-	 * ConcurrentHashMap allows concurrent operators on it by multiple threads
-	 * It doent allow null keys
-	 * It doesnt throw ConcurrentModificationException, as segments of map are synchroised
-	 * Read operator are fully concurrent
+	 * When multiple threads tries to modify a meant to be synchronised resource,
+	 * then they end up in wrong values 
+	 * 
+	 * Placing gaurd conditions
+	 * Synchronizing the resources 
+	 * using volatile variable
+	 * prevent race conditions
 	 */
 	static int count=1;
 	public static void main(String[] args) {
