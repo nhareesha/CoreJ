@@ -11,12 +11,12 @@ import java.util.List;
 
 /**
  * @author Hareesha
- * May 18, 2017 2017
+ * May 18, 2017
  */
 public class ComparatorExample {
 	
 	//In order for objects to be sorted, they need to either implement comparable interface or
-	//provide a explict comparator to sort method
+	//provide a explict comparator to sort method using compare() method
 	public static void main(String[] args) {
 		Order o1 = new Order("O1",60);
 		Order o2 = new Order("O2",160);
