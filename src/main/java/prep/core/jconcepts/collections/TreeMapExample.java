@@ -36,7 +36,7 @@ public class TreeMapExample {
 			System.out.println(e+" VALUE :" + emp.get(e));
 		}
 		
-		//Employee with third highest sal
+		//Employee with third highest sal on key
 		Iterator<Employee> setIt = emp.keySet().iterator();
 		int index = emp.size()-3;
 		Employee val= null;
@@ -47,6 +47,8 @@ public class TreeMapExample {
 			}
 			
 		}
+		
+		//To sort based on value collection can be reversed.
 		
 		System.out.println(val);
 	}
