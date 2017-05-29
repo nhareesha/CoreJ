@@ -66,6 +66,8 @@ public class StackDSInArray {
 				System.out.println(o);
 		}
 	}
+	
+
 	public static void main(String[] args) {
 		StackDSInArray stack = new StackDSInArray();
 		stack.push(10);
