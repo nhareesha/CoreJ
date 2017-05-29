@@ -13,6 +13,10 @@ public class QueueLinkedList {
 	 * Queue using Singly LinkedList
 	 * Queue maintains two ointers for tracking
 	 * front and rear
+	 * 
+	 * Insert, delete: O(1)
+	 * 
+	 * Search : O(n)
 	 */
 	QueueNode front;
 	QueueNode rear;
