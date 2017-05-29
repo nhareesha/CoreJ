@@ -51,7 +51,7 @@ public class LinkedListAndVectorExample {
 		System.out.println(vec);
 		
 		//for sorting we use Collections.sort static method,it need Comparator interface instance
-		//or class to implemenet comparator interface
+		//or class to implemenet Comparable interface
 		
 		Collections.sort(l,new ListItemComparator());
 		System.out.println("List After Sort - In decending Order: ");
