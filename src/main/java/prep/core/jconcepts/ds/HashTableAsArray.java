@@ -7,12 +7,19 @@ package prep.core.jconcepts.ds;
  * @author Hareesha May 28, 2017
  * @param <T>
  */
-public class HashTableAsArray<T> {
+public class HashTableAsArray {
 
 	/**
-	 * HashTable is based on hashing algorith HashTable is internally backed by
+	 * HashTable is based on hashing algorithm HashTable is internally backed by
 	 * a array of LinkedLists Where each entry of LinkedList hold the Key and
-	 * value pair. Key would be the hash of the actual key and value would be
+	 * value pair. 
+	 * 
+	 * The index of the array is determined by calculating hash of the given key.
+	 * 
+	 * The elements from the array is retrieved , if there is any based on the obtained hashed index.
+	 * then the new elements is added to the linked list at the index.
+	 * 
+	 * Key would be the hash of the actual key and value would be
 	 * the values associated with the key.
 	 */
 
