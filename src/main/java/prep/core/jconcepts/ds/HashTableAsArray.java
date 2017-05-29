@@ -4,9 +4,10 @@
 package prep.core.jconcepts.ds;
 
 /**
- * @author Hareesha May 28, 2017 2017
+ * @author Hareesha May 28, 2017
+ * @param <T>
  */
-public class HashTableAsArray {
+public class HashTableAsArray<T> {
 
 	/**
 	 * HashTable is based on hashing algorith HashTable is internally backed by
@@ -35,7 +36,12 @@ public class HashTableAsArray {
 	private int getHash(int key) {
 		return key % size;
 	}
-
+	
+	/**
+	 * This methods puts the key and associated value in to hash table
+	 * @param key
+	 * @param val
+	 */
 	public void put(int key, Object val) {
 		int hashIndex = getHash(key);
 		Entry arrEntryAtIndx = hashArr[hashIndex];
@@ -50,23 +56,51 @@ public class HashTableAsArray {
 		}
 
 	}
+	
+	/**
+	 * Gets the associated value from the HashTable for the given key
+	 * @param key
+	 */
+	public Object get(int key){
+		int hashIndex = getHash(key);
+		
+		Entry arrEntryAtIndx = hashArr[hashIndex];
+		if(arrEntryAtIndx!=null){
+			
+			while(true){
+				if(arrEntryAtIndx.getKey()==key){
+					System.out.println(arrEntryAtIndx.getVal());
+					return arrEntryAtIndx.getVal();
+				}
+				arrEntryAtIndx = arrEntryAtIndx.getNext();
+				if(arrEntryAtIndx==null){
+					break;
+				}
+					
+			}
+		}
+		return null;
+	}
 
+	/*
+	 * This displays the key value pair of the LinkedList
+	 */
 	public void display() {
 		for (Entry e : hashArr) {
 			if (e != null) {
 				if (e.getNext() == null) {
-					System.out.println("Key : " + e.getKey() + "Value :"
+					System.out.println("Key : " + e.getKey() + "--->Value :"
 							+ e.getVal());
 				} else {
 					Entry head = e;
 					Entry tempHead = head;
 					while (tempHead.getNext() != null) {
 						System.out.println("Key : " + tempHead.getKey()
-								+ "Value : " + tempHead.getVal());
+								+ "---> Value : " + tempHead.getVal());
 						tempHead = tempHead.getNext();
 					}
 					System.out.println("Key : " + tempHead.getKey()
-							+ "Value : " + tempHead.getVal());
+							+ "--->Value : " + tempHead.getVal());
 				}
 			}
 		}
@@ -80,8 +114,9 @@ public class HashTableAsArray {
 		htbl.put(1, "Hello1");
 		htbl.put(3, "Hello3");
 		htbl.put(0, "Hello0");
-		htbl.put(1, "Hello1");
-		htbl.display();
+		htbl.put(8, "Hello1");
+		htbl.get(8);
+		//htbl.display();
 
 	}
 
