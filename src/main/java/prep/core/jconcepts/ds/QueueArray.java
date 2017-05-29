@@ -17,6 +17,9 @@ public class QueueArray {
 	 * Insertion : While inserting increment "rear" and insert.
 	 * 
 	 * Deletion : decrement "rear" and "front" and pop element
+	 * 
+	 * Insert, delete : O(1)
+	 * Search or Access : O(n)
 	 */
 	
 	Object[] qarr;
