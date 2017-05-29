@@ -15,20 +15,28 @@ public class LinearSearch {
 	 * 
 	 * Time complexity would be O(n) as element can be at the last of the data set.
 	 */
+	int[] arr = null;
+	int find;
+	public LinearSearch(int arr[], int find){
+		this.arr = arr;
+		this.find = find;
+	}
 	public static void main(String[] args) {
 		
-		int[] arr = new int[]{2,3,45,10,0};
-		int find = 0;
-		
-		linearSearch(arr, find);
+		int[] array = {1,2,4,5,6,7,8,9,10,11};
+		int search = 6;
+		LinearSearch ls = new LinearSearch(array,search);
+		ls.linearSearch();
 		
 }
 
 	
-	public static void linearSearch(int[] arr,int find){
+	public  void linearSearch(){
+		int trycount=0;
 		for(int i=0;i<arr.length;i++){
+			trycount++;
 			if(arr[i]==find){
-				System.out.println("Element :"+find+"  found at index-->"+i);
+				System.out.println("Element :"+find+"  found at index-->"+i+" after  "+trycount+" tries");
 				break;
 			}
 		}
