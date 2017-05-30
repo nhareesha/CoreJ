@@ -12,10 +12,15 @@ public class BubbleSort {
 	 * In Bubble sort every element is compared with next element , if greater
 	 * it is swapped.
 	 * 
+	 * After 1st iteration the max element will be at the end of the list sorted.
+	 * 
+	 * Again same procedure is continued , till the last but one element.
 	 * It is done for n times
 	 * 
 	 * 
 	 * time complexity is O(n2)
+	 * 
+	 * Space complexity is O(1)
 	 */
 	public static void main(String[] args) {
 
