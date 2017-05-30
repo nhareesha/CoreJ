@@ -44,10 +44,10 @@ public class BinarySearch {
 	}
 
 	public static void main(String[] args) {
-		int[] dataset = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
-				14, 15 };
+		int[] dataset = new int[] { 1110, 1112, 1113, 2224, 2225, 2226, 5557, 5558, 5559, 55510, 88811, 88812, 99913,
+				99914, 99915 };
 		BinarySearch bsearch = new BinarySearch(dataset);
-		bsearch.binarySearchWithoutRecursion(13);
+		bsearch.binarySearchWithoutRecursion(5557);
 
 	}
 

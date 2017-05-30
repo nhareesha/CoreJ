@@ -5,7 +5,7 @@ package prep.core.jconcepts.search;
 
 /**
  * @author Hareesha
- * May 29, 2017 2017
+ * May 29, 2017
  */
 public class InterpolationSearch {
 
