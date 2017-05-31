@@ -54,6 +54,9 @@ public class LinkedListU {
 			
 		}
 	}
+	/**
+	 * 
+	 */
 	public void display(){
 		Node tackPtr = head;
 		while(tackPtr.getNxt()!=null){
@@ -62,6 +65,48 @@ public class LinkedListU {
 		}
 		System.out.println(tackPtr.getVal());
 	}
+	
+	/**
+	 * This method finds the middle node in one pass
+	 */
+	public Object findMiddleNode(){
+		Node curr = head;
+		Node middle = head;
+		int len = 0;
+		while(curr!=null && curr.getNxt()!=null){
+			len = len+1;
+			curr = curr.getNxt();
+			if(len%2==0){
+				middle = middle.getNxt();
+			}
+		}
+		
+		if(len%2==1){
+			middle = middle.getNxt();
+		}
+		return middle.getVal();
+	}
+	/**
+	 * Finding nth element
+	 * @param n
+	 * @return
+	 */
+	public Object findnthElement(int n){
+		Node curr = head;
+		Node middle = head;
+		int len = 1;
+		while(curr!=null && curr.getNxt()!=null){
+			len = len+1;
+			curr = curr.getNxt();
+			if(len > n){
+				middle = middle.getNxt();
+			}
+		}
+		
+		
+		return middle.getVal();
+	}
+	
 	public static void main(String[] args) {
 		LinkedListU l = new LinkedListU();
 		l.add(1);
