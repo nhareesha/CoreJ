@@ -14,7 +14,7 @@ public class MergeSort {
 	
 	public static void main(String[] args) {
 		
-		int[] arr = new int[] { 6, 3, 10, 9, 2, 0 };
+		int[] arr = new int[] { 6, 3, 10, 9, 2, 99 };
 		
 		System.out.println("Before Sort");
 		for(int i : arr){
