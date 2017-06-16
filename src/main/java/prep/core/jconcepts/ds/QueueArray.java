@@ -3,11 +3,13 @@
  */
 package prep.core.jconcepts.ds;
 
+import java.lang.reflect.Array;
+
 /**
  * @author Hareesha
  * May 29, 2017 2017
  */
-public class QueueArray {
+public class QueueArray<T> {
 
 	/**
 	 * Queue is a DataStructure which allows First In First Out pattern
@@ -22,23 +24,23 @@ public class QueueArray {
 	 * Search or Access : O(n)
 	 */
 	
-	Object[] qarr;
+	T[] qarr;
 	int size;
 	int front;
 	int rear;
 	
-	public QueueArray(){
-		this(10);
+	public QueueArray(Class<T> type){
+		this(type,10);
 	}
 	
-	public QueueArray(int size){
+	public QueueArray(Class<T> type , int size){
 		this.size = size;
-		qarr = new Object[size];
+		qarr = (T[])Array.newInstance(type, size);
 		front=-1;
 		rear=-1;
 	}
 	
-	public void queue(Object val){
+	public void queue(T val){
 		if(front==-1 ||  rear==-1){
 			qarr[0]=val;
 			front=0;
@@ -53,8 +55,8 @@ public class QueueArray {
 		}
 	}
 	
-	public Object dequeue(){
-		Object poped=null;
+	public T dequeue(){
+		T poped=null;
 		if(front==-1 || rear==-1 || front>=size){
 			System.out.println("No elements in the queue ");
 		}else{
@@ -73,7 +75,7 @@ public class QueueArray {
 	}
 	
 	public static void main(String[] args) {
-		QueueArray qa= new QueueArray();
+		QueueArray<String> qa= new QueueArray<>(String.class);
 		qa.queue("abc1");
 		qa.queue("abc2");
 		qa.queue("abc3");
