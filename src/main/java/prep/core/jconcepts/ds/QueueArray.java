@@ -40,7 +40,7 @@ public class QueueArray<T> {
 		rear=-1;
 	}
 	
-	public void queue(T val){
+	public void enqueue(T val){
 		if(front==-1 ||  rear==-1){
 			qarr[0]=val;
 			front=0;
@@ -74,18 +74,25 @@ public class QueueArray<T> {
 		return false;
 	}
 	
+	public boolean isEmpty(){
+		if(front== -1 || rear==-1){
+			return true;
+		}
+		return false;
+	}
+	
 	public static void main(String[] args) {
 		QueueArray<String> qa= new QueueArray<>(String.class);
-		qa.queue("abc1");
-		qa.queue("abc2");
-		qa.queue("abc3");
-		qa.queue("abc4");
-		qa.queue("abc5");
-		qa.queue("abc6");
-		qa.queue("abc7");
-		qa.queue("abc8");
-		qa.queue("abc9");
-		qa.queue("abc10");
+		qa.enqueue("abc1");
+		qa.enqueue("abc2");
+		qa.enqueue("abc3");
+		qa.enqueue("abc4");
+		qa.enqueue("abc5");
+		qa.enqueue("abc6");
+		qa.enqueue("abc7");
+		qa.enqueue("abc8");
+		qa.enqueue("abc9");
+		qa.enqueue("abc10");
 		System.out.println((String)qa.dequeue());
 		System.out.println((String)qa.dequeue());
 		System.out.println((String)qa.dequeue());

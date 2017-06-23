@@ -6,6 +6,7 @@ package prep.core.jconcepts.collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -32,7 +33,6 @@ public class ConcurrentCollections {
 		System.out.println(cl);
 		
 		Iterator<Integer> lit = cl.listIterator();
-		
 		for(int i =0 ; lit.hasNext();i++){
 			System.out.println(lit.next());
 			if(i==9){

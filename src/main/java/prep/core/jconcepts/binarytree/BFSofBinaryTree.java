@@ -66,7 +66,7 @@ public class BFSofBinaryTree {
 		bt.enqueue(root);
 		while (!bt.isEmpty()) {
 			NodeBT node = bt.dequeue();
-			if(node==null){
+			if(node==null){ //this is the base case
 				break;
 			}
 				System.out.println(node);

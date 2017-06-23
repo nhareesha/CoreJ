@@ -5,7 +5,7 @@ package prep.core.jconcepts;
 
 /**
  * @author Hareesha
- * May 24, 2017 2017
+ * May 24, 2017
  */
 public class ReverseWords {
 

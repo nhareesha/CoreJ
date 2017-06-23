@@ -16,7 +16,7 @@ public class HashTableAsArray {
 	 * 
 	 * The index of the array is determined by calculating hash of the given key.
 	 * 
-	 * The elements from the array is retrieved , if there is any based on the obtained hashed index.
+	 * The elements from the array is retrieved , if there is any, based on the obtained hashed index.
 	 * then the new elements is added to the linked list at the index.
 	 * 
 	 * Key would be the hash of the actual key and value would be

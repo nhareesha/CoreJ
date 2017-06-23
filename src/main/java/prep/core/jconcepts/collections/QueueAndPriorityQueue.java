@@ -34,6 +34,7 @@ public class QueueAndPriorityQueue {
 		System.out.println(queue.poll()); //First Out
 		System.out.println(queue.peek()); //Doesn't remove element from the queue , but returns element
 		System.out.println(queue.poll());
+		System.out.println(queue.offer("Hello"));
 		
 		//Priority Queue
 		PriorityQueue<Integer> qp1 = new PriorityQueue<>();

@@ -17,6 +17,9 @@ public class ConcurrentHashMapExample2 {
 
 	/**
 	 * ExecutorService , spawns 3 threads and they handle the task asynchronously 
+	 * 
+	 * ConcurrentHashMap is synchrinised and it is recomended to use ConcurrentHashMap
+	 * whene there is need to use HashTable. 
 	 */
 
 	public static void main(String[] args) {
