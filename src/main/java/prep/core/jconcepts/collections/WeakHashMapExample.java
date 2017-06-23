@@ -3,6 +3,7 @@
  */
 package prep.core.jconcepts.collections;
 
+import java.lang.ref.WeakReference;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -23,12 +24,26 @@ public class WeakHashMapExample {
 	 * */
 	public static void main(String[] args) {
 		
-		Map<Entry,String> wkMap = new WeakHashMap<>();
-		wkMap.put(new Entry("Name-1"),"WeakReference - 1");
-		wkMap.put(new Entry("Name-2"),"WeakReference - 2");
-		wkMap.put(new Entry("Name-3"),"WeakReference - 3");
+		Map<WeakReference<Entry>,String> wkMap = new WeakHashMap<>();
+		
+		Entry entry1= new Entry("Name-1");
+		WeakReference<Entry> wk1 = new WeakReference<Entry>(entry1);
+		
+		Entry entry2= new Entry("Name-1");
+		WeakReference<Entry> wk2 = new WeakReference<Entry>(entry2);
+		
+		Entry entry3= new Entry("Name-1");
+		WeakReference<Entry> wk3 = new WeakReference<Entry>(entry3);
+		
+		wkMap.put(wk1,"WeakReference - 1");
+		wkMap.put(wk2,"WeakReference - 2");
+		wkMap.put(wk3,"WeakReference - 3");
 		
 		System.out.println(wkMap.size());
+		
+		entry1=null;
+		entry2=null;
+		entry3=null;
 		
 		System.gc();//May run , may not run
 		
