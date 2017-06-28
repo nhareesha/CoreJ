@@ -16,7 +16,7 @@ public class UniqueCharacters {
 		
 		String s = "abcdefggik";
 		char[] arr = s.toCharArray();
-		//ASCII characters
+		//ASCII characters 0-127
 		int[] a = new int[128];
 		
 		for(char b : arr){
