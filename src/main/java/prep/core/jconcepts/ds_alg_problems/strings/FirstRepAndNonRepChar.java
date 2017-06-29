@@ -1,7 +1,7 @@
 /**
  * 
  */
-package prep.core.jconcepts.ds_alg_problems;
+package prep.core.jconcepts.ds_alg_problems.strings;
 
 /**
  * @author Hareesha
