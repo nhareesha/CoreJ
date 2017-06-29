@@ -1,7 +1,7 @@
 /**
  * 
  */
-package prep.core.jconcepts.ds_alg_problems;
+package prep.core.jconcepts.ds_alg_problems.strings;
 
 /**
  * @author Hareesha
@@ -26,8 +26,10 @@ public class OneStringRotationOfAnother {
 		String s2=  "ohell";
 	    
 	   System.out.println(isARotation(s1,s2));
-
+	   
+	 
 	}
+	
 	public static boolean isARotation(String s1 , String s2){
 		
 		if(s1.length()!=s2.length()){
@@ -35,12 +37,12 @@ public class OneStringRotationOfAnother {
 		}
 		String s3 = s1+s1;
 		if(s3.contains(s2)){
+			System.out.println(s3);
 			return true;
 		}
 		
-		
-		
 		return false;
 	}
+	
 
 }
