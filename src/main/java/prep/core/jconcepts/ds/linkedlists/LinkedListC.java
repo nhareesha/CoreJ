@@ -3,6 +3,8 @@
  */
 package prep.core.jconcepts.ds.linkedlists;
 
+import java.util.HashSet;
+
 /**
  * @author Hareesha
  * Jun 29, 2017
@@ -71,7 +73,7 @@ public class LinkedListC {
 		System.out.println();
 	}
 	/**
-	 * remove kth node from last
+	 * remove kth node from last in a singly linked lit
 	 * @param k
 	 * @return
 	 */
@@ -100,19 +102,50 @@ public class LinkedListC {
 		
 		return new Integer(p2.data);
 	}
+	
+	/**
+	 * Remove duplicates from a singly linked list
+	 * 
+	 * only head node is given
+	 * 
+	 * To acomplish this we can use HashSet
+	 * 
+	 * we try to add to data to set and see every time next node data is there in set, if there wedelete that next node
+	 * @param args
+	 */
+	public void removeDuplicated(){
+		ListNode n = head;
+		if(n==null || n.next==null){
+			return;
+		}
+		HashSet<Integer> set= new HashSet<>();
+		while(n!=null && n.next!=null){
+			set.add(n.data);
+			if(set.contains(n.next.data)){
+				n.next= n.next.next;
+			}
+			n = n.next;
+		}
+		
+	}
 	public static void main(String[] args) {
 		LinkedListC ll= new LinkedListC();
 		ll.addToEnd(1);
 		ll.addToEnd(2);
 		ll.addToEnd(3);
-		ll.addToEnd(14);
+		ll.addToEnd(3);
 		ll.addToEnd(41);
+		ll.addToEnd(3);
 		ll.addToEnd(43);
-		ll.display();
-		ll.delete(3);
-		ll.delete(1);
+		ll.addToEnd(43);
+	//	ll.display();
+	//	ll.delete(3);
+		//ll.delete(1);
 		ll.display();
 		ll.findkthNodeFromLast(3);
+		
+		ll.removeDuplicated();
+		ll.display();
 	}
 
 }
