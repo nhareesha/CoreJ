@@ -128,23 +128,73 @@ public class LinkedListC {
 		}
 		
 	}
+	/**
+	 * Delete a given node from a linked list
+	 * @param n
+	 */
+	public void deleteGivenNode(ListNode n){
+		if(n==null){
+			return;
+		}
+		
+		ListNode nextNode = n.next;
+		n.data = nextNode.data;
+		n.next = nextNode.next;
+		
+	}
+	
+	/**using 2 pointers
+	 * return Only even number in the linkedlist
+	 * @param args
+	 */
+	public void findEvenNumber(){
+		if(head==null){
+			return;
+		}
+		//this is to delete the all the odd number nodes from the front of the list
+		while(head.data%2!=0){
+			head = head.next;
+		}
+		ListNode n = head;
+		ListNode p1 = n;
+		ListNode p2 = n.next;
+		while(p2!=null){
+			if(p2.data % 2 != 0){
+				p1.next = p2.next;
+				p2=p2.next;
+			}else{
+			p1=p1.next;
+			p2=p2.next;
+			}
+	}	
+	
+		
+	}
 	public static void main(String[] args) {
 		LinkedListC ll= new LinkedListC();
 		ll.addToEnd(1);
+		ll.addToEnd(11);
+		ll.addToEnd(13);
 		ll.addToEnd(2);
 		ll.addToEnd(3);
 		ll.addToEnd(3);
-		ll.addToEnd(41);
+		ll.addToEnd(4);
 		ll.addToEnd(3);
-		ll.addToEnd(43);
-		ll.addToEnd(43);
-	//	ll.display();
-	//	ll.delete(3);
-		//ll.delete(1);
+		ll.addToEnd(4);
+		ll.addToEnd(48);
+		ll.addToEnd(48);
+		ll.addToEnd(48);
+		
 		ll.display();
+		ll.delete(48);
+		ll.display();
+		
 		ll.findkthNodeFromLast(3);
 		
 		ll.removeDuplicated();
+		ll.display();
+		
+		ll.findEvenNumber();
 		ll.display();
 	}
 
