@@ -52,6 +52,7 @@ public class LinkedListC {
 		while(n.next!=null){
 			if(n.next.data==d){
 				n.next = n.next.next;
+				break;
 			}
 			n = n.next;
 		}
@@ -119,12 +120,27 @@ public class LinkedListC {
 			return;
 		}
 		HashSet<Integer> set= new HashSet<>();
-		while(n!=null && n.next!=null){
-			set.add(n.data);
+	/*	while(n!=null && n.next!=null){
 			if(set.contains(n.next.data)){
 				n.next= n.next.next;
-			}
+				n= n.next;
+			}else{
+			set.add(n.data);
 			n = n.next;
+			}
+		}*/
+		ListNode p = null;
+		while(n!=null){
+			
+			if(set.contains(n.data)){
+				p.next = n.next;
+				n = n.next;
+				
+			}else{
+				set.add(n.data);
+				p=n;
+				n= n.next;
+			}
 		}
 		
 	}
@@ -167,35 +183,50 @@ public class LinkedListC {
 			p2=p2.next;
 			}
 	}	
-	
+}	
+		/**
+		 * Find if linked list is circular
+		 * use HashSet to track nodes, if node is already present then it return true
+		 */
+		public boolean findIfCircular(){
+			HashSet<ListNode> set = new HashSet<ListNode>();
+			ListNode n = head;
+			while(n!=null){
+				if(set.contains(n)){
+					return true;
+				}
+				set.add(n);
+				n=n.next;
+			}
+			return false;
+		}
 		
-	}
+
 	public static void main(String[] args) {
 		LinkedListC ll= new LinkedListC();
-		ll.addToEnd(1);
-		ll.addToEnd(11);
-		ll.addToEnd(13);
+		ll.addToEnd(4);
 		ll.addToEnd(2);
 		ll.addToEnd(3);
-		ll.addToEnd(3);
 		ll.addToEnd(4);
 		ll.addToEnd(3);
 		ll.addToEnd(4);
 		ll.addToEnd(48);
-		ll.addToEnd(48);
+		ll.addToEnd(0);
 		ll.addToEnd(48);
 		
 		ll.display();
-		ll.delete(48);
-		ll.display();
+	//	ll.delete(48);
+	//	ll.display();
 		
-		ll.findkthNodeFromLast(3);
+	//	ll.findkthNodeFromLast(3);
 		
 		ll.removeDuplicated();
 		ll.display();
 		
-		ll.findEvenNumber();
-		ll.display();
+	//	ll.findEvenNumber();
+	//	ll.display();
+		
+	//	System.out.println(ll.findIfCircular());
 	}
 
 }
