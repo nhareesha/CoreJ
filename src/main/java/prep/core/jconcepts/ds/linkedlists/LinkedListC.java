@@ -225,6 +225,21 @@ public class LinkedListC {
 			return newHead;
 		}
 		
+		/**
+		 * Compare two linked list to check if they have same data
+		 * @return
+		 */
+		public boolean compareTwoLists(ListNode l1, ListNode l2){
+			while(l1!=null && l2!=null){
+				if(l1.data != l2.data){
+					return false;
+				}
+				l1 = l1.next;
+				l2=l2.next;
+			}
+			
+			return true;
+		}
 
 	public static void main(String[] args) {
 		LinkedListC ll= new LinkedListC();
