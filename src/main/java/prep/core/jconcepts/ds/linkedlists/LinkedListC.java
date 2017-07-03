@@ -58,6 +58,12 @@ public class LinkedListC {
 		}
 		return head;
 	}
+	/**
+	 * Retun head of linked list
+	 */
+	public ListNode getHead(){
+		return head;
+	}
 	
 	/**
 	 * Display elements of linked list
@@ -120,15 +126,7 @@ public class LinkedListC {
 			return;
 		}
 		HashSet<Integer> set= new HashSet<>();
-	/*	while(n!=null && n.next!=null){
-			if(set.contains(n.next.data)){
-				n.next= n.next.next;
-				n= n.next;
-			}else{
-			set.add(n.data);
-			n = n.next;
-			}
-		}*/
+
 		ListNode p = null;
 		while(n!=null){
 			
@@ -201,6 +199,32 @@ public class LinkedListC {
 			return false;
 		}
 		
+		/**
+		 * to reverse a list we assume that we have the head node avaiable
+		 * @return head
+		 * 
+		 * 1->2->3->4
+		 * 
+		 * 4->3->2->1
+		 */
+		public ListNode reverseList(){
+			
+			if(head==null){
+				return null;
+			}
+			
+			ListNode newHead = null;
+			ListNode n = head;
+			while(n!=null){
+				ListNode l = new ListNode(n.data);
+				l.next = newHead;
+				newHead=l;
+				n=n.next;
+			}
+			
+			return newHead;
+		}
+		
 
 	public static void main(String[] args) {
 		LinkedListC ll= new LinkedListC();
@@ -215,18 +239,18 @@ public class LinkedListC {
 		ll.addToEnd(48);
 		
 		ll.display();
-	//	ll.delete(48);
-	//	ll.display();
+		ll.delete(48);
+		ll.display();
 		
-	//	ll.findkthNodeFromLast(3);
+		ll.findkthNodeFromLast(3);
 		
 		ll.removeDuplicated();
 		ll.display();
 		
-	//	ll.findEvenNumber();
-	//	ll.display();
+		ll.findEvenNumber();
+		ll.display();
 		
-	//	System.out.println(ll.findIfCircular());
+		System.out.println(ll.findIfCircular());
 	}
 
 }
