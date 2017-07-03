@@ -7,7 +7,7 @@ package prep.core.jconcepts.ds.linkedlists;
  * @author Hareesha
  * Jul 2, 2017 2017
  */
-public class ReverseALinkedList {
+public class ReverseALinkedListAndPalindrom {
 
 	/**
 	 * everse a linked list
