@@ -237,7 +237,13 @@ public class LinkedListC {
 				l1 = l1.next;
 				l2=l2.next;
 			}
-			
+			//to compare two unequal lists
+			if(l1 == null && l2 != null){
+				return false;
+			}
+			if(l1 != null && l2 == null){
+				return false;
+			}
 			return true;
 		}
 
