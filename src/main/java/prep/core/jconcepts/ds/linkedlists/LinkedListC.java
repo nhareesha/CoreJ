@@ -191,7 +191,7 @@ public class LinkedListC {
 			ListNode n = head;
 			while(n!=null){
 				if(set.contains(n)){
-					return true;
+					return true;//circular
 				}
 				set.add(n);
 				n=n.next;
@@ -245,6 +245,36 @@ public class LinkedListC {
 				return false;
 			}
 			return true;
+		}
+		
+		/**
+		 * Check if two linked lists intersect and determine if they interseect, return node
+		 * if they intersect , else return null
+		 * @param head1
+		 * @param head2
+		 * @return ListNode
+		 */
+		public ListNode checkIfIntersect(ListNode head1, ListNode head2){
+			
+			HashSet<ListNode> set = new HashSet<>();
+			ListNode n1 = head1;
+			ListNode n2 = head2;
+			
+			//putting all data of linkedlist one in to set
+			while(n1!=null){
+				set.add(n1);
+				n1= n1.next;
+			}
+			
+			//while interting another list check if it is already in the list
+			while(n2 != null){
+				if(set.contains(n2)){
+					return n2;//if there return the intersecting node
+				}
+				set.add(n2);
+				n2 = n2.next;
+			}
+			return null;
 		}
 
 	public static void main(String[] args) {
