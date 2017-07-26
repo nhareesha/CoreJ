@@ -24,11 +24,14 @@ public class MaximumDifferencePair {
 	 * 
 	 */
 	public static void main(String[] args) {
-		int a[] = {7, 9, 5, 6, 3, 2};
+		int a[] = {2,1};
+		if(a!=null && a.length<=1){
+			return;
+		}
 		int b[] = new int[2];
 		int diff = a[1]-a[0];
-		b[0] = a[0];
-		b[1] = a[1];
+	//	b[0] = a[0];
+	//	b[1] = a[1];
 		for(int i = 0;i<a.length;i++){
 			for(int j = i+1;j<a.length;j++){
 				if(a[i]<a[j]){
@@ -43,7 +46,34 @@ public class MaximumDifferencePair {
 		}
 		
 		System.out.println("difference : "+diff + "\n Elements :"+Arrays.toString(b));
-
+		efficientWayToFindDiff();
+	}
+	
+	public static void efficientWayToFindDiff(){
+		int a[] = {7,9};
+		if(a!=null && a.length<=1){
+			return;
+		}
+		//base case where only two elements are there in array
+		int diff = a[1]-a[0];
+		if(a.length == 2){
+			if(a[0] < a[1]){
+				System.out.println(diff);
+				return;
+			}else{
+				return;
+			}
+		}
+		int min = a[0];
+		for(int i = 1 ;i < a.length;i++){
+			if(a[i]-min > diff){
+				diff = a[i]-min;
+			}
+			if(a[i]<min){
+				min = a[i];
+			}
+		}
+		System.out.println(diff);
 	}
 
 }
